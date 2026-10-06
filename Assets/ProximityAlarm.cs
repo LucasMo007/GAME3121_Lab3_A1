@@ -19,6 +19,7 @@ public class ProximityAlarm : MonoBehaviour
     {
         alarmSource = gameObject.AddComponent<AudioSource>();
         alarmSource.playOnAwake = false;
+        alarmSource.volume = 0.25f;
     }
 
     void Update()
@@ -42,7 +43,8 @@ public class ProximityAlarm : MonoBehaviour
         }
 
         // 如果在警报感应范围内
-        if (closestDistance <= maxDetectionDistance)
+        //if (closestDistance <= maxDetectionDistance)
+        if (closestDistance > minDetectionDistance && closestDistance <= maxDetectionDistance)
         {
             // 归一化比例：0 表示最远边缘，1 表示贴脸最近
             float dangerFactor = 1f - Mathf.InverseLerp(minDetectionDistance, maxDetectionDistance, closestDistance);
@@ -62,7 +64,7 @@ public class ProximityAlarm : MonoBehaviour
         }
         else
         {
-            beepTimer = 0f; // 离开范围不鸣叫
+            beepTimer = 0.5f; // 离开范围不鸣叫
         }
     }
 }

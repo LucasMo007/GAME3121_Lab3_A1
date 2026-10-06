@@ -188,3 +188,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   speed: 5
   hitParticlePrefab: {fileID: 1994826852645124372, guid: 1026fe26d37c16940979001e0ff3adc1, type: 3}
+  obstacleBounceClip: {fileID: 8300000, guid: c5a4fe7cfe83a00488cf0eb1c019e7a4, type: 3}
